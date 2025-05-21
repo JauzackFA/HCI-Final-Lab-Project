@@ -1,0 +1,32 @@
+[
+  {
+    "image": "assets/hp2.png",
+    "alt": "Headphones",
+    "title": "Gaming Headphones",
+    "description": "Premium sound with noise-canceling technology and comfortable ergonomic design for long listening sessions."
+  },
+  {
+    "image": "assets/eb2.png",
+    "alt": "Earbuds",
+    "title": "Earbuds Model Y",
+    "description": "Compact, wireless earbuds with great sound quality and long battery life, perfect for daily use."
+  },
+  {
+    "image": "assets/sp3.png",
+    "alt": "Speaker",
+    "title": "Speaker",
+    "description": "Powerful sound and deep bass in a portable, durable design for music and conferences on the go."
+  },
+  {
+    "image": "assets/hp3.png",
+    "alt": "Open-Ear Headphones",
+    "title": "Open-Ear Headphones",
+    "description": "Comfortable, high-quality sound with an open design for outdoor activities, allowing awareness of surroundings."
+  },
+  {
+    "image": "assets/sp6.png",
+    "alt": "Wireless Speaker",
+    "title": "Wireless Speaker",
+    "description": "Portable speaker with crisp sound and deep bass, offering wireless convenience for any occasion."
+  }
+]

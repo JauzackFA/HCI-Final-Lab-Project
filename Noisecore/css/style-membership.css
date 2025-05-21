@@ -1,0 +1,109 @@
+body {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.membership-form {
+  padding: 50px 20px;
+  background-color: #f8f8f8;
+  text-align: center;
+}
+
+.membership-form h1 {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.membership-form p {
+  margin-bottom: 25px;
+}
+
+form {
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  width: auto;
+}
+
+form input,
+form select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.terms-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.terms-checkbox input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+.terms-checkbox label {
+  margin: 0;
+  font-weight: normal;
+  cursor: pointer;
+  flex: 1;
+  display: inline-block;
+  line-height: 1.2;
+}
+
+form button {
+  background-color: transparent !important;
+  color: #333;
+  padding: 10px 20px;
+  border: 2px solid #333;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  display: block;
+  margin: 0 auto;
+}
+
+form button:hover {
+  color: #333 !important;
+  transform: scale(1.05);
+}
+
+@media screen and (max-width: 768px) {
+  .membership-form {
+    padding: 20px;
+  }
+
+  .membership-form h1 {
+    font-size: 28px;
+  }
+
+  footer .footer-info {
+    flex-direction: column;
+    text-align: center;
+  }
+}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Noisecore - Products</title>
+    <link rel="stylesheet" href="css/style-product.css" />
+    <link rel="stylesheet" href="tools/style/style-footer.css" />
+    <link rel="stylesheet" href="tools/style/style-header.css" />
+  </head>
+  <body>
+    <div id="header"></div>
+
+    <section class="search-section">
+      <div class="search-filter-container">
+        <input type="text" placeholder="Search products..." class="search-bar" />
+        <select class="filter-category">
+          <option value="">Filter by Category</option>
+          <option value="headphones">Headphones</option>
+          <option value="earbuds">Earbuds</option>
+          <option value="speakers">Speakers</option>
+          <option value="open-ear">Open-Ear Earbuds</option>
+        </select>
+      </div>
+    </section>
+
+    <section class="products">
+      <!-- <h2>Menu</h2> -->
+      <div class="product-gallery" id="product-gallery"></div>
+    </section>
+
+    <div id="footer"></div>
+
+    <script>
+      function loadHeaderFooter() {
+        fetch("tools/header.html")
+          .then((res) => res.text())
+          .then((data) => (document.getElementById("header").innerHTML = data));
+
+        fetch("tools/footer.html")
+          .then((res) => res.text())
+          .then((data) => (document.getElementById("footer").innerHTML = data));
+      }
+      loadHeaderFooter();
+    </script>
+
+    <script>
+      function loadProducts() {
+        fetch("data/products.json")
+          .then((response) => response.json())
+          .then((data) => {
+            const gallery = document.getElementById("product-gallery");
+            const filterSelect = document.querySelector(".filter-category");
+            const searchInput = document.querySelector(".search-bar");
+
+            function render(products) {
+              gallery.innerHTML = "";
+              products.forEach((product) => {
+                gallery.innerHTML += `
+                <div class="product-card" data-category="${product.category}">
+                  <img src="${product.image}" alt="${product.name}" />
+                  <h3>${product.name}</h3>
+                  <p>${product.rating}</p>
+                  <p>${product.price}</p>
+                </div>
+              `;
+              });
+            }
+
+            function applyFilters() {
+              const selectedCategory = filterSelect.value;
+              const searchTerm = searchInput.value.toLowerCase();
+
+              const filtered = data.filter((product) => {
+                const matchCategory = selectedCategory === "" || product.category === selectedCategory;
+                const matchSearch = product.name.toLowerCase().includes(searchTerm);
+                return matchCategory && matchSearch;
+              });
+
+              render(filtered);
+            }
+
+            render(data);
+            filterSelect.addEventListener("change", applyFilters);
+            searchInput.addEventListener("input", applyFilters);
+          });
+      }
+
+      document.addEventListener("DOMContentLoaded", loadProducts);
+    </script>
+  </body>
+</html>

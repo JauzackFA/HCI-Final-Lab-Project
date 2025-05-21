@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Noisecore - Homepage</title>
+    <link rel="stylesheet" href="css/style-index.css" />
+    <link rel="stylesheet" href="tools/style/style-footer.css" />
+    <link rel="stylesheet" href="tools/style/style-header.css" />
+  </head>
+  <body>
+    <div id="header"></div>
+
+    <section class="hero">
+      <img src="assets/ds.jpg" alt="Audio Products" class="hero-image" />
+      <div class="hero-text">
+        <h1>Welcome to Noisecore</h1>
+        <p>Your trusted source for premium audio technology.</p>
+      </div>
+    </section>
+
+    <section class="featured-products">
+      <h2>Featured Products</h2>
+      <div class="product-gallery" id="product-gallery"></div>
+      <a href="products.html" class="cta-button1">View All Product</a>
+    </section>
+
+    <section class="promotions">
+      <h2>Current Promotions</h2>
+      <div class="promotion-items" id="promotion-items"></div>
+      <a href="deals.html" class="cta-button1">View All Promotion</a>
+    </section>
+
+    <div id="footer"></div>
+
+    <script>
+      function loadHeaderFooter() {
+        fetch("tools/header.html")
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById("header").innerHTML = data;
+          });
+
+        fetch("tools/footer.html")
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById("footer").innerHTML = data;
+          });
+      }
+
+      function loadFeaturedProducts() {
+        fetch("data/featured-products.json")
+          .then((response) => response.json())
+          .then((data) => {
+            const productGallery = document.getElementById("product-gallery");
+
+            data.forEach((product) => {
+              const productCard = document.createElement("div");
+              productCard.classList.add("product-card");
+
+              productCard.innerHTML = `
+                <img src="${product.image}" alt="${product.alt}" />
+                <h3>${product.title}</h3>
+                <p>${product.description}</p>
+              `;
+
+              productGallery.appendChild(productCard);
+            });
+          });
+      }
+
+      function loadPromotions() {
+        fetch("data/promotions.json")
+          .then((response) => response.json())
+          .then((data) => {
+            const promotionItems = document.getElementById("promotion-items");
+
+            data.forEach((promotion) => {
+              const promotionItem = document.createElement("div");
+              promotionItem.classList.add("promotion-item");
+
+              promotionItem.innerHTML = `
+                <h3>${promotion.title}</h3>
+                <p>${promotion.description}</p>
+              `;
+
+              promotionItems.appendChild(promotionItem);
+            });
+          });
+      }
+      loadHeaderFooter();
+      loadFeaturedProducts();
+      loadPromotions();
+    </script>
+  </body>
+</html>

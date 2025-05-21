@@ -1,0 +1,72 @@
+[
+  {
+    "name": "SoundBeats",
+    "price": "$50.00",
+    "rating": "★ ★ ★ ★ ★",
+    "image": "assets/hp1.png",
+    "category": "headphones"
+  },
+  {
+    "name": "EchoTone",
+    "price": "$30.00",
+    "rating": "★ ★ ★ ★ ★",
+    "image": "assets/hp2.png",
+    "category": "headphones"
+  },
+  {
+    "name": "BreezeAudio",
+    "price": "$40.00",
+    "rating": "★ ★ ★ ★ ★",
+    "image": "assets/eb2.png",
+    "category": "earbuds"
+  },
+  {
+    "name": "VibeSound",
+    "price": "$60.00",
+    "rating": "★ ★ ★ ★ ★",
+    "image": "assets/sp2.jpg",
+    "category": "speakers"
+  },
+  {
+    "name": "PureSound",
+    "price": "$45.00",
+    "rating": "★ ★ ★ ★ ★",
+    "image": "assets/eb1.png",
+    "category": "earbuds"
+  },
+  {
+    "name": "MaxSound",
+    "price": "$55.00",
+    "rating": "★ ★ ★ ★ ★",
+    "image": "assets/hp3.png",
+    "category": "headphones"
+  },
+  {
+    "name": "WaveBeat",
+    "price": "$65.00",
+    "rating": "★ ★ ★ ★ ★",
+    "image": "assets/hp4.png",
+    "category": "headphones"
+  },
+  {
+    "name": "BassBoom",
+    "price": "$70.00",
+    "rating": "★ ★ ★ ★ ★",
+    "image": "assets/sp3.png",
+    "category": "speakers"
+  },
+  {
+    "name": "SmartWave",
+    "price": "$80.00",
+    "rating": "★ ★ ★ ★ ★",
+    "image": "assets/sp6.png",
+    "category": "speakers"
+  },
+  {
+    "name": "BeautySound",
+    "price": "$75.00",
+    "rating": "★ ★ ★ ★ ★",
+    "image": "assets/sp1.jpg",
+    "category": "speakers"
+  }
+]

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Noisecore - Deals</title>
+    <link rel="stylesheet" href="css/style-deals.css" />
+    <link rel="stylesheet" href="tools/style/style-footer.css" />
+    <link rel="stylesheet" href="tools/style/style-header.css" />
+  </head>
+  <body>
+    <div id="header"></div>
+
+    <section class="deals">
+      <h2>Current Promotions</h2>
+      <ul>
+        <p>🎧 50% off on all Headphones – Experience premium sound at half the price.</p>
+        <p>🎁 Buy One, Get One Free on Earbuds – Because one is never enough.</p>
+        <p>🛍️ 10% off for Members – Loyalty pays off, always.</p>
+      </ul>
+
+      <h2>Become a Noisecore Member</h2>
+      <p>Don’t just listen — live the sound. Join Noisecore Membership today and unlock access to exclusive deals, early product releases, and members-only rewards.</p>
+      <p>Because when you’re with us, you don’t just get great sound — you get more of everything you love.</p>
+      <p><strong>Membership is free. The benefits? Priceless.</strong></p>
+      <a href="membership.html" class="cta-button1">Join Now</a>
+    </section>
+
+    <div id="footer"></div>
+
+    <script>
+      function loadHeaderFooter() {
+        fetch("tools/header.html")
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById("header").innerHTML = data;
+          });
+
+        fetch("tools/footer.html")
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById("footer").innerHTML = data;
+          });
+      }
+      loadHeaderFooter();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Noisecore - About</title>
+    <link rel="stylesheet" href="css/style-about.css" />
+    <link rel="stylesheet" href="tools/style/style-footer.css" />
+    <link rel="stylesheet" href="tools/style/style-header.css" />
+  </head>
+  <body>
+    <div id="header"></div>
+
+    <section class="about">
+      <h2 id="about-title">About Noisecore</h2>
+      <p id="about-description"></p>
+
+      <h2 id="mission-title"></h2>
+      <p id="mission-description"></p>
+
+      <h2 id="history-title"></h2>
+      <p id="history-description"></p>
+
+      <h2 id="values-title"></h2>
+      <p id="values-description"></p>
+    </section>
+
+    <div id="footer"></div>
+
+    <script>
+      function loadHeaderFooter() {
+        fetch("tools/header.html")
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById("header").innerHTML = data;
+          });
+
+        fetch("tools/footer.html")
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById("footer").innerHTML = data;
+          });
+      }
+
+      function loadAboutUs() {
+        fetch("data/about-us.json")
+          .then((response) => response.json())
+          .then((data) => {
+            document.getElementById("about-title").innerText = "About Noisecore";
+            document.getElementById("about-description").innerText = data.about.description;
+
+            document.getElementById("mission-title").innerText = data.mission.title;
+            document.getElementById("mission-description").innerText = data.mission.description;
+
+            document.getElementById("history-title").innerText = data.history.title;
+            document.getElementById("history-description").innerText = data.history.description;
+
+            document.getElementById("values-title").innerText = data.values.title;
+            document.getElementById("values-description").innerText = data.values.description;
+          });
+      }
+
+      loadHeaderFooter();
+      loadAboutUs();
+    </script>
+  </body>
+</html>

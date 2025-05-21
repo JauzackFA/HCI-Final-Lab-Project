@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Noisecore - Join Membership</title>
+    <link rel="stylesheet" href="css/style-membership.css" />
+    <link rel="stylesheet" href="tools/style/style-footer.css" />
+    <link rel="stylesheet" href="tools/style/style-header.css" />
+    <script src="js/validation.js" defer></script>
+  </head>
+  <body>
+    <div id="header"></div>
+
+    <section class="membership-form">
+      <h1>Join Membership</h1>
+      <p>Membership is free. The benefits? Priceless.</p>
+      <form id="membershipForm">
+        <label for="name">Name*</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">Email*</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="gender">Gender*</label>
+        <select id="gender" name="gender">
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+
+        <label for="dob">Date of Birth*</label>
+        <input type="date" id="dob" name="dob" required />
+
+        <label for="password">Password*</label>
+        <input type="password" id="password" name="password" required />
+
+        <div class="terms-checkbox">
+          <input type="checkbox" id="terms" />
+          <label for="terms">I agree to the terms and conditions</label>
+        </div>
+
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+
+    <div id="footer"></div>
+
+    <script>
+      function loadHeaderFooter() {
+        fetch("tools/header.html")
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById("header").innerHTML = data;
+          });
+
+        fetch("tools/footer.html")
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById("footer").innerHTML = data;
+          });
+      }
+      loadHeaderFooter();
+
+      document.getElementById("membershipForm").addEventListener("submit", function (event) {
+        event.preventDefault();
+        this.reset();
+      });
+    </script>
+  </body>
+</html>
